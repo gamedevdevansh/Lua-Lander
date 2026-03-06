@@ -23,7 +23,7 @@ public class PausedUI : MonoBehaviour {
             musicVolumeTextMesh.text = "MUSIC " + MusicManager.Instance.GetMusicVolume();
         });
         resumeButton.onClick.AddListener(() => {
-            GameManager.Instance.UnpauseGame();
+            GameManager.Instance.UnPauseGame();
         });
         mainMenuButton.onClick.AddListener(() => {
             SceneLoader.LoadScene(SceneLoader.Scene.MainMenuScene);

@@ -236,7 +236,7 @@ public class Lander: MonoBehaviour
     {
         return fuelAmount;
     }
-    public float GetfuelAmountNormalized()
+    public float GetFuelAmountNormalized()
     {
         return fuelAmount / fuelAmountMax;
     }

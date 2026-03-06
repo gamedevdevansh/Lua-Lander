@@ -32,7 +32,7 @@ public class LandedUI : MonoBehaviour {
         if (e.landingType == Lander.LandingType.Success) {
             titleTextMesh.text = "SUCCESSFUL LANDING!";
             nextButtonTextMesh.text = "CONTINUE";
-            nextButtonClickAction = GameManager.Instance.GoToNextLevel;
+            nextButtonClickAction = LevelManager.Instance.GoToNextLevel;
         } else {
             titleTextMesh.text = "<color=#ff0000>CRASH!</color>";
             nextButtonTextMesh.text = "RETRY";

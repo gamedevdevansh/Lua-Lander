@@ -17,7 +17,7 @@ public class GameOverUI : MonoBehaviour {
     }
 
     private void Start() {
-        scoreTextMesh.text = "FINAL SCORE: " + GameManager.Instance.GetTotalScore().ToString();
+        scoreTextMesh.text = "FINAL SCORE: " + ScoreManager.Instance.GetTotalScore().ToString();
 
         mainMenuButton.Select();
     }

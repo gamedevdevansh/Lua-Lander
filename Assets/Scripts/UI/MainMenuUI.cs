@@ -13,7 +13,8 @@ public class MainMenuUI : MonoBehaviour {
         Time.timeScale = 1f;
 
         playButton.onClick.AddListener(() => {
-            GameManager.ResetStaticData();
+            //GameManager.ResetStaticData();
+            //ScoreManager.Instance.ResetScore();
             SceneLoader.LoadScene(SceneLoader.Scene.GameScene);
         });
 
