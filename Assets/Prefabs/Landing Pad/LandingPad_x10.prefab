@@ -54,7 +54,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6641641425461065108, guid: 2114dd4dff88b8d4892a38cd8835c4ca, type: 3}
       propertyPath: scoreMultiplier
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 6873629302028618912, guid: 2114dd4dff88b8d4892a38cd8835c4ca, type: 3}
       propertyPath: m_LocalScale.x
@@ -68,21 +68,13 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.4
       objectReference: {fileID: 0}
-    - target: {fileID: 6873629302028618912, guid: 2114dd4dff88b8d4892a38cd8835c4ca, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6873629302028618912, guid: 2114dd4dff88b8d4892a38cd8835c4ca, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7426508722190824457, guid: 2114dd4dff88b8d4892a38cd8835c4ca, type: 3}
       propertyPath: m_Size.x
-      value: 5
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 7426508722190824457, guid: 2114dd4dff88b8d4892a38cd8835c4ca, type: 3}
       propertyPath: m_Size.y
-      value: 1.5
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 7787101465913764240, guid: 2114dd4dff88b8d4892a38cd8835c4ca, type: 3}
       propertyPath: m_Size.x
@@ -102,7 +94,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8172707730671780285, guid: 2114dd4dff88b8d4892a38cd8835c4ca, type: 3}
       propertyPath: m_Name
-      value: LandingPad_x5
+      value: LandingPad_x10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
