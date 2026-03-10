@@ -16,8 +16,8 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private PopUpUI popUpUI;
 
-    //private bool rareItemCollected;
-    //private bool playerLanded;
+    private bool rareItemCollected;
+    private bool playerLanded;
 
     //public static void ResetStaticData()
     //{
@@ -73,9 +73,9 @@ public class GameManager : MonoBehaviour
     {
         //AddScore(e.score);
         ScoreManager.Instance.AddScore(e.score);
-        //playerLanded = true;
+        playerLanded = true;
 
-        //CheckWinCondition();
+        CheckWinCondition();
         //LevelManager.Instance.GoToNextLevel();
     }
 
@@ -144,24 +144,24 @@ public class GameManager : MonoBehaviour
     //    }
     //}
 
-    //public void RareItemCollected()
-    //{
+    public void RareItemCollected()
+    {
 
-    //    rareItemCollected = true;
-    //    CheckWinCondition();
-    //    Debug.Log("Rare item Collected!");
+        rareItemCollected = true;
+        CheckWinCondition();
+        Debug.Log("Rare item Collected!");
 
-    //    ScoreManager.Instance.AddScore(2000); // Bouns Score
-    //    LevelManager.Instance.GoToNextLevel();
-    //}
+        ScoreManager.Instance.AddScore(2000); // Bouns Score
+        LevelManager.Instance.GoToNextLevel();
+    }
 
-    //void CheckWinCondition()
-    //{
-    //    if (rareItemCollected && playerLanded)
-    //    {
-    //        LevelManager.Instance.GoToNextLevel();
-    //    }
-    //}
+    void CheckWinCondition()
+    {
+        if (rareItemCollected && playerLanded)
+        {
+            LevelManager.Instance.GoToNextLevel();
+        }
+    }
 
     public void RetryLevel()
     {
