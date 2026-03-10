@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using Unity.Cinemachine;
 using System;
+using UnityEngine.UIElements;
 
 public class GameManager : MonoBehaviour
 {
@@ -14,6 +15,9 @@ public class GameManager : MonoBehaviour
     //private static int totalScore = 0;
 
     [SerializeField] private PopUpUI popUpUI;
+
+    //private bool rareItemCollected;
+    //private bool playerLanded;
 
     //public static void ResetStaticData()
     //{
@@ -69,7 +73,10 @@ public class GameManager : MonoBehaviour
     {
         //AddScore(e.score);
         ScoreManager.Instance.AddScore(e.score);
-        LevelManager.Instance.GoToNextLevel();
+        //playerLanded = true;
+
+        //CheckWinCondition();
+        //LevelManager.Instance.GoToNextLevel();
     }
 
     private void Lander_OnCoinPickup(object sender, System.EventArgs e){
@@ -134,6 +141,25 @@ public class GameManager : MonoBehaviour
     //    {
     //        // We Still have more levels
     //        SceneLoader.LoadScene(SceneLoader.Scene.GameScene);
+    //    }
+    //}
+
+    //public void RareItemCollected()
+    //{
+
+    //    rareItemCollected = true;
+    //    CheckWinCondition();
+    //    Debug.Log("Rare item Collected!");
+
+    //    ScoreManager.Instance.AddScore(2000); // Bouns Score
+    //    LevelManager.Instance.GoToNextLevel();
+    //}
+
+    //void CheckWinCondition()
+    //{
+    //    if (rareItemCollected && playerLanded)
+    //    {
+    //        LevelManager.Instance.GoToNextLevel();
     //    }
     //}
 

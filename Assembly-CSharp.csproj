@@ -61,7 +61,6 @@
     <Analyzer Include="E:\JS\6000.3.4f1\Editor\Data\Tools\BuildPipeline\Unity.SourceGenerators\Unity.UIToolkit.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\Pickups\CoinPickup.cs" />
     <Compile Include="Assets\Scripts\UI\StatsUI.cs" />
     <Compile Include="Assets\Scripts\Managers\LevelManager.cs" />
     <Compile Include="Assets\Scripts\UI\PausedUI.cs" />
@@ -81,10 +80,10 @@
     <Compile Include="Assets\Scripts\UI\MainMenuUI.cs" />
     <Compile Include="Assets\Scripts\GamePlay\GameManager.cs" />
     <Compile Include="Assets\Scripts\Managers\SceneLoader.cs" />
+    <Compile Include="Assets\Scripts\Pickup\RareItem.cs" />
     <Compile Include="Assets\Scripts\GamePlay\LevelSelectUI.cs" />
     <Compile Include="Assets\InputActions.cs" />
     <Compile Include="Assets\Scripts\UI\PopUpUI.cs" />
-    <Compile Include="Assets\Scripts\Pickups\FuelPickup.cs" />
     <Compile Include="Assets\Scripts\Lander\LandingPad.cs" />
     <Compile Include="Assets\Scripts\GamePlay\GameInput.cs" />
     <Compile Include="Assets\Scripts\Lander\Lander.cs" />
