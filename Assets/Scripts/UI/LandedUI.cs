@@ -43,7 +43,8 @@ public class LandedUI : MonoBehaviour {
             Mathf.Round(e.landingSpeed * 2f) + "\n" +
             Mathf.Round(e.dotVector * 100f) + "\n" +
             "x" + e.scoreMultiplier + "\n" +
-            e.score;
+            ScoreManager.Instance.GetScore();
+            //e.score
 
         Show();
     }

@@ -5,7 +5,8 @@ using UnityEngine.SceneManagement;
 using Unity.Cinemachine;
 using System;
 using UnityEngine.UIElements;
-
+using TMPro;
+using System.Collections;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
@@ -15,8 +16,10 @@ public class GameManager : MonoBehaviour
     //private static int totalScore = 0;
 
     [SerializeField] private PopUpUI popUpUI;
+    //[SerializeField] private GameObject landingPadBlinker;
+    [SerializeField] private TextMeshProUGUI objectiveText;
 
-    private bool rareItemCollected;
+    private bool rareItemCollected = false;
     private bool playerLanded;
 
     //public static void ResetStaticData()
@@ -73,10 +76,16 @@ public class GameManager : MonoBehaviour
     {
         //AddScore(e.score);
         ScoreManager.Instance.AddScore(e.score);
-        playerLanded = true;
 
-        CheckWinCondition();
-        //LevelManager.Instance.GoToNextLevel();
+        if (rareItemCollected)
+        {
+            objectiveText.gameObject.SetActive(false);
+            ScoreManager.Instance.AddToTotalScore();
+            //LevelManager.Instance.GoToNextLevel();   
+        }
+
+        //playerLanded = true;
+        //CheckWinCondition();
     }
 
     private void Lander_OnCoinPickup(object sender, System.EventArgs e){
@@ -148,20 +157,28 @@ public class GameManager : MonoBehaviour
     {
 
         rareItemCollected = true;
-        CheckWinCondition();
         Debug.Log("Rare item Collected!");
-
         ScoreManager.Instance.AddScore(2000); // Bouns Score
-        LevelManager.Instance.GoToNextLevel();
+
+        //landingPadBlinker.SetActive(true);
+
+        //if (landingPadBlinker != null)
+        //    landingPadBlinker.SetActive(true);
+
+        objectiveText.gameObject.SetActive(true);
+        objectiveText.text = "RETURN TO LANDING PAD";
+
+        //CheckWinCondition();
+        //LevelManager.Instance.GoToNextLevel();
     }
 
-    void CheckWinCondition()
-    {
-        if (rareItemCollected && playerLanded)
-        {
-            LevelManager.Instance.GoToNextLevel();
-        }
-    }
+    //void CheckWinCondition()
+    //{
+    //    if (rareItemCollected && playerLanded)
+    //    {
+    //        LevelManager.Instance.GoToNextLevel();
+    //    }
+    //}
 
     public void RetryLevel()
     {

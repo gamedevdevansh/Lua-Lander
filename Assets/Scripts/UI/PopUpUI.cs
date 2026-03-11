@@ -1,25 +1,64 @@
+//using TMPro;
+//using UnityEngine;
+
+//public class PopUpUI : MonoBehaviour
+//{
+//    [SerializeField] private TextMeshProUGUI popupText;
+//    private float timer;
+//    private float showTime = 1f;
+//    void Update()
+//    {
+//        if (popupText.gameObject.activeSelf)
+//        {
+//            timer -= Time.deltaTime;
+//            if(timer <= 0f)
+//            {
+//                popupText.gameObject.SetActive(false);
+//            }
+//        }
+//    }
+
+//    public void ShowPopup(int amount)
+//    {
+//        popupText.text = "+" + amount;
+//        popupText.gameObject.SetActive(true);
+//        timer = showTime;
+//    }   
+//}
 using TMPro;
 using UnityEngine;
 
 public class PopUpUI : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI popupText;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
 
     private float timer;
     private float showTime = 1f;
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
+    private float fadeSpeed = 3f;
+
     void Update()
     {
         if (popupText.gameObject.activeSelf)
         {
             timer -= Time.deltaTime;
-            if(timer <= 0f)
+
+            Color color = popupText.color;
+
+            if (timer > showTime * 0.5f)
+            {
+                // Fade In
+                color.a += fadeSpeed * Time.deltaTime;
+            }
+            else
+            {
+                // Fade Out
+                color.a -= fadeSpeed * Time.deltaTime;
+            }
+
+            popupText.color = color;
+
+            if (timer <= 0f)
             {
                 popupText.gameObject.SetActive(false);
             }
@@ -29,7 +68,13 @@ public class PopUpUI : MonoBehaviour
     public void ShowPopup(int amount)
     {
         popupText.text = "+" + amount;
+
+        Color color = popupText.color;
+        color.a = 0f;
+        popupText.color = color;
+
         popupText.gameObject.SetActive(true);
+
         timer = showTime;
-    }   
+    }
 }

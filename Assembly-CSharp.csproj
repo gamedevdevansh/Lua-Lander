@@ -65,6 +65,7 @@
     <Compile Include="Assets\Scripts\Managers\LevelManager.cs" />
     <Compile Include="Assets\Scripts\UI\PausedUI.cs" />
     <Compile Include="Assets\Scripts\Lander\LanderVisuals.cs" />
+    <Compile Include="Assets\Scripts\Lander\LandingPadBlinker.cs" />
     <Compile Include="Assets\Scripts\Pickup\FuelScript.cs" />
     <Compile Include="Assets\Scripts\Lander\LanderAudio.cs" />
     <Compile Include="Assets\Scripts\Pickup\CoinScript.cs" />
