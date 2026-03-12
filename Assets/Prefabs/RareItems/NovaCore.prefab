@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5863565928338398342}
   - component: {fileID: 1659520651524496301}
   - component: {fileID: 6803146025038205860}
+  - component: {fileID: -3086656134136424804}
   m_Layer: 0
   m_Name: NovaCore
   m_TagString: Untagged
@@ -142,3 +143,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RareItem
   itemName: NovaCore
+--- !u!111 &-3086656134136424804
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5668595065233643664}
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Animation: {fileID: 7400000, guid: 6de9e0cff504f964993bf22278a46873, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 6de9e0cff504f964993bf22278a46873, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_UpdateMode: 0
+  m_CullingType: 0

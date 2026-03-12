@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5742817703457077389}
   - component: {fileID: 1950401176958653464}
   - component: {fileID: 3550102849167527758}
+  - component: {fileID: -2195964382058922222}
   m_Layer: 0
   m_Name: AncientSpaceArtifact
   m_TagString: Untagged
@@ -142,3 +143,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RareItem
   itemName: AncientSpaceArtifact
+--- !u!111 &-2195964382058922222
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7660196587826645213}
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Animation: {fileID: 7400000, guid: 6de9e0cff504f964993bf22278a46873, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 6de9e0cff504f964993bf22278a46873, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_UpdateMode: 0
+  m_CullingType: 0

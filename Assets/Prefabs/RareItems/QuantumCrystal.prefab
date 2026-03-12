@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8834316076059316754}
   - component: {fileID: 6512930350711171203}
   - component: {fileID: 1445553972623665788}
+  - component: {fileID: 414210912597026194}
   m_Layer: 0
   m_Name: QuantumCrystal
   m_TagString: Untagged
@@ -142,3 +143,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RareItem
   itemName: QuantumCrystal
+--- !u!111 &414210912597026194
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1489140622570600380}
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Animation: {fileID: 7400000, guid: 6de9e0cff504f964993bf22278a46873, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 6de9e0cff504f964993bf22278a46873, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_UpdateMode: 0
+  m_CullingType: 0

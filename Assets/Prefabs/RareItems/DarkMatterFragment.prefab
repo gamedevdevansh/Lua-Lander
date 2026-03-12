@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6545870059004251884}
   - component: {fileID: 5448149465429135289}
   - component: {fileID: 2649193401051405830}
+  - component: {fileID: 3884130340347969788}
   m_Layer: 0
   m_Name: DarkMatterFragment
   m_TagString: Untagged
@@ -142,3 +143,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RareItem
   itemName: DarkMatterFragment
+--- !u!111 &3884130340347969788
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8936539392452969995}
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Animation: {fileID: 7400000, guid: 6de9e0cff504f964993bf22278a46873, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 6de9e0cff504f964993bf22278a46873, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_UpdateMode: 0
+  m_CullingType: 0
