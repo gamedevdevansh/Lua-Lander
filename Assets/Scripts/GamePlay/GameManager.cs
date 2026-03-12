@@ -79,7 +79,7 @@ public class GameManager : MonoBehaviour
     //}
     void Update()
     {
-        if (tapToPlayText.gameObject.activeSelf)
+        if (tapToPlayText.gameObject.activeSelf || objectiveText.gameObject.activeSelf)
         {
             float alpha = Mathf.PingPong(Time.time * 2f, 1f);
             Color color = tapToPlayText.color;
