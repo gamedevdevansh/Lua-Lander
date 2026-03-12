@@ -18,6 +18,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private PopUpUI popUpUI;
     //[SerializeField] private GameObject landingPadBlinker;
     [SerializeField] private TextMeshProUGUI objectiveText;
+    [SerializeField] private TextMeshProUGUI tapToPlayText;
 
     private bool rareItemCollected = false;
     private bool playerLanded;
@@ -43,6 +44,8 @@ public class GameManager : MonoBehaviour
         Instance = this;
     }
     private void Start(){
+        tapToPlayText.gameObject.SetActive(true);
+
         Lander.Instance.OnCoinPickup += Lander_OnCoinPickup;
         Lander.Instance.OnLanded += Lander_OnLanded;
         Lander.Instance.OnStateChanged += Lander_OnStateChanged;
@@ -61,6 +64,7 @@ public class GameManager : MonoBehaviour
         isTimerActive = e.state == Lander.State.Normal;
 
         if (e.state == Lander.State.Normal) {
+            tapToPlayText.gameObject.SetActive(false);
             cinemachineCamera.Target.TrackingTarget = Lander.Instance.transform;
             CinemachineCameraZoom2D.Instance.SetNormalTargetOrthographicSize();
         }
@@ -68,10 +72,21 @@ public class GameManager : MonoBehaviour
 
     //private void Update()
     //{
-    //    if (isTimerActive){
+    //    if (isTimerActive)
+    //    {
     //        time += Time.deltaTime;
     //    }
     //}
+    void Update()
+    {
+        if (tapToPlayText.gameObject.activeSelf)
+        {
+            float alpha = Mathf.PingPong(Time.time * 2f, 1f);
+            Color color = tapToPlayText.color;
+            color.a = alpha;
+            tapToPlayText.color = color;
+        }
+    }
     private void Lander_OnLanded(object sender, Lander.OnLandedEventArgs e)
     {
         //AddScore(e.score);

@@ -21,14 +21,6 @@ public class ScoreManager : MonoBehaviour
     {
         
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if (isTimerActive)
-            time += Time.deltaTime;
-    }
-
     public void StartTimer()
     {
         isTimerActive = true;
@@ -64,4 +56,12 @@ public class ScoreManager : MonoBehaviour
         score = 0;
         time = 0f;
     }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (isTimerActive)
+            time += Time.deltaTime;
+    }
+
 }
