@@ -437,7 +437,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::LevelSelectUI
   buttonContainer: {fileID: 1636967864}
   buttonPrefab: {fileID: 465368253619367749, guid: 00074b6e21f67e2448d8e3406e542786, type: 3}
-  totalLevels: 15
+  totalLevels: 5
 --- !u!4 &1050739676
 Transform:
   m_ObjectHideFlags: 0
@@ -849,8 +849,8 @@ MonoBehaviour:
   m_ChildAlignment: 4
   m_StartCorner: 0
   m_StartAxis: 0
-  m_CellSize: {x: 350, y: 350}
-  m_Spacing: {x: 100, y: 100}
+  m_CellSize: {x: 275, y: 275}
+  m_Spacing: {x: 50, y: 50}
   m_Constraint: 1
   m_ConstraintCount: 5
 --- !u!114 &1636967866

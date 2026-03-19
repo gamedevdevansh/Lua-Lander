@@ -24,7 +24,19 @@ public class LevelManager : MonoBehaviour
             currentLevelNumber = PlayerPrefs.GetInt(LEVEL_KEY, 1);
         }
         LoadCurrentLevel();
-    }
+
+        //int level = LevelManager.Instance.GetCurrentLevelNumber();
+
+        //if (IsArtifactCollected(level))
+        //{
+        //    artifactIcon.color = Color.white;
+        //}
+        //else
+        //{
+        //    artifactIcon.color = Color.gray;
+        //}
+    
+}
 
     private void LoadCurrentLevel()
     {

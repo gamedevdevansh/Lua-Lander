@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
@@ -23,6 +23,18 @@ public class LevelSelectUI : MonoBehaviour
             if (i > unlockedLevel)
             {
                 button.interactable = false;
+            }
+
+            // ⭐ NEW PART (artifact check)
+            Transform artifactIcon = buttonObj.transform.Find("ArtifactIcon");
+
+            if (artifactIcon != null)
+            {
+                Image iconImage = artifactIcon.GetComponent<Image>();
+
+                bool collected = PlayerPrefs.GetInt("Level_" + levelIndex, 0) == 1;
+
+                iconImage.color = collected ? Color.white : Color.gray;
             }
 
             button.onClick.AddListener(() =>

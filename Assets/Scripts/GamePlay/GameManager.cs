@@ -11,33 +11,20 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
 
-    //[SerializeField] private int levelNumber;
-    //private static int levelNumber = 1;
-    //private static int totalScore = 0;
+    [SerializeField] private UnityEngine.UI.Image artifactIcon;
 
     [SerializeField] private PopUpUI popUpUI;
-    //[SerializeField] private GameObject landingPadBlinker;
     [SerializeField] private TextMeshProUGUI objectiveText;
     [SerializeField] private TextMeshProUGUI tapToPlayText;
 
     private bool rareItemCollected = false;
     private bool playerLanded;
 
-    //public static void ResetStaticData()
-    //{
-    //    levelNumber = 1;
-    //    totalScore = 0;
-    //}
-
     public event EventHandler OnGamePaused;
     public event EventHandler OnGameUnpaused;
-
-    //[SerializeField] private List<GameLevel> gameLevelList;
     [SerializeField] private CinemachineCamera cinemachineCamera;
     public object landerRigidBody2D { get; private set; }
 
-    //private int score;
-    //private float time;
     private bool isTimerActive;
     private void Awake()
     {
@@ -70,103 +57,39 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    //private void Update()
-    //{
-    //    if (isTimerActive)
-    //    {
-    //        time += Time.deltaTime;
-    //    }
-    //}
     void Update()
     {
-        if (tapToPlayText.gameObject.activeSelf || objectiveText.gameObject.activeSelf)
+        float alpha = Mathf.PingPong(Time.time * 2f, 1f);
+
+        if (tapToPlayText.gameObject.activeSelf)
         {
-            float alpha = Mathf.PingPong(Time.time * 2f, 1f);
             Color color = tapToPlayText.color;
             color.a = alpha;
             tapToPlayText.color = color;
         }
+
+        if (objectiveText.gameObject.activeSelf)
+        {
+            Color color = objectiveText.color;
+            color.a = alpha;
+            objectiveText.color = color;
+        }
     }
+
     private void Lander_OnLanded(object sender, Lander.OnLandedEventArgs e)
     {
-        //AddScore(e.score);
         ScoreManager.Instance.AddScore(e.score);
 
         if (rareItemCollected)
         {
             objectiveText.gameObject.SetActive(false);
-            ScoreManager.Instance.AddToTotalScore();
-            //LevelManager.Instance.GoToNextLevel();   
+            ScoreManager.Instance.AddToTotalScore(); 
         }
-
-        //playerLanded = true;
-        //CheckWinCondition();
     }
 
-    private void Lander_OnCoinPickup(object sender, System.EventArgs e){
-        //AddScore(500); 
+    private void Lander_OnCoinPickup(object sender, System.EventArgs e){ 
         ScoreManager.Instance.AddScore(500);
     }
-
-
-    //private void LoadCurrentLevel(){
-    //    GameLevel gameLevel = GetGameLevel();
-    //    GameLevel spawnedGameLevel = Instantiate(gameLevel, Vector3.zero, Quaternion.identity);
-    //    Lander.Instance.transform.position = spawnedGameLevel.GetLanderStartPosition();
-    //    cinemachineCamera.Target.TrackingTarget = spawnedGameLevel.GetCameraStartTargetTransform();
-    //    CinemachineCameraZoom2D.Instance.SetTargetOrthographicSize(spawnedGameLevel.GetZoomOutOrthographSize());
-    //}
-
-    //private GameLevel GetGameLevel(){
-    //    foreach(GameLevel gameLevel in gameLevelList){ 
-    //        if(gameLevel.GetLevelNumber() == levelNumber){
-    //            return gameLevel;
-    //            //GameLevel spawnedGameLevel = Instantiate(gameLevel, Vector3.zero, Quaternion.identity);
-    //            //Lander.Instance.transform.position = spawnedGameLevel.GetLanderStartPosition();
-    //            //cinemachineCamera.Target.TrackingTarget = spawnedGameLevel.GetCameraStartTargetTransform();
-    //            //CinemachineCameraZoom2D.Instance.SetTargetOrthographicSize(spawnedGameLevel.GetZoomOutOrthographSize());
-    //        }
-    //    }
-    //    return null;
-    //}
-    //public void AddScore(int addScoreAmount){
-    //    score += addScoreAmount;
-    //    Debug.Log(score);
-    //}
-
-    //public int GetScore(){
-    //    return score;
-    //}
-    //public float GetTime(){
-    //    return time;
-    //}
-
-    //public int GetLevelNumber()
-    //{
-    //    return levelNumber;
-    //}
-
-    //public int GetTotalScore()
-    //{
-    //    return totalScore;
-    //}
-    //public void GoToNextLevel()
-    //{
-    //    levelNumber++;
-    //    totalScore += score;    
-    //    //SceneManager.LoadScene(0);
-
-    //    if(GetGameLevel() == null)
-    //    {
-    //        // no more levels
-    //        SceneLoader.LoadScene(SceneLoader.Scene.GameOverScene);
-    //    }
-    //    else
-    //    {
-    //        // We Still have more levels
-    //        SceneLoader.LoadScene(SceneLoader.Scene.GameScene);
-    //    }
-    //}
 
     public void RareItemCollected()
     {
@@ -175,25 +98,10 @@ public class GameManager : MonoBehaviour
         Debug.Log("Rare item Collected!");
         ScoreManager.Instance.AddScore(2000); // Bouns Score
 
-        //landingPadBlinker.SetActive(true);
-
-        //if (landingPadBlinker != null)
-        //    landingPadBlinker.SetActive(true);
-
         objectiveText.gameObject.SetActive(true);
         objectiveText.text = "RETURN TO LANDING PAD";
 
-        //CheckWinCondition();
-        //LevelManager.Instance.GoToNextLevel();
     }
-
-    //void CheckWinCondition()
-    //{
-    //    if (rareItemCollected && playerLanded)
-    //    {
-    //        LevelManager.Instance.GoToNextLevel();
-    //    }
-    //}
 
     public void RetryLevel()
     {
