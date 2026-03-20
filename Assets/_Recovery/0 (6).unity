@@ -438,12 +438,6 @@ MonoBehaviour:
   buttonContainer: {fileID: 1636967864}
   buttonPrefab: {fileID: 465368253619367749, guid: 00074b6e21f67e2448d8e3406e542786, type: 3}
   totalLevels: 5
-  artifactSprites:
-  - {fileID: 21300000, guid: f9fd9e4ac41e0a14090e8f57692f4a51, type: 3}
-  - {fileID: 21300000, guid: 5d0e37765d8204b4e8894453e0a56f43, type: 3}
-  - {fileID: 21300000, guid: ef38f21feb3c97f459190b971033de53, type: 3}
-  - {fileID: 21300000, guid: 42377440a236d784f9209a0dc17c17bb, type: 3}
-  - {fileID: 21300000, guid: fdeaee0037a9bb442bb35c2046ce145c, type: 3}
 --- !u!4 &1050739676
 Transform:
   m_ObjectHideFlags: 0

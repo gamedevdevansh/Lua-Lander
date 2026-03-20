@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 2243828561432423271}
   - component: {fileID: 1416128552026061916}
   m_Layer: 5
-  m_Name: 'ArtifactIcon '
+  m_Name: ArtifactIcon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

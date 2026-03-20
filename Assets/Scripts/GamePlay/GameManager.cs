@@ -1,4 +1,4 @@
-//using UnityEditor.ShaderGraph.Internal;
+﻿//using UnityEditor.ShaderGraph.Internal;
 using UnityEngine;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
@@ -95,12 +95,24 @@ public class GameManager : MonoBehaviour
     {
 
         rareItemCollected = true;
+        SaveArtifact();
         Debug.Log("Rare item Collected!");
         ScoreManager.Instance.AddScore(2000); // Bouns Score
 
         objectiveText.gameObject.SetActive(true);
         objectiveText.text = "RETURN TO LANDING PAD";
+    }
 
+    public bool IsRareItemCollected()
+    {
+        return rareItemCollected;
+    }
+    public void SaveArtifact()
+    {
+        int level = LevelManager.Instance.GetCurrentLevelNumber();
+        PlayerPrefs.SetInt("Level_" + level, 1);
+        PlayerPrefs.Save();
+        Debug.Log("SAVED: Level_" + level); // ⭐ DEBUG
     }
 
     public void RetryLevel()

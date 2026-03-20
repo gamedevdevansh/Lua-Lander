@@ -55,6 +55,7 @@ public class ScoreManager : MonoBehaviour
     {
         score = 0;
         time = 0f;
+        PlayerPrefs.DeleteAll();
     }
 
     // Update is called once per frame

@@ -7,6 +7,7 @@ public class LevelSelectUI : MonoBehaviour
     [SerializeField] private Transform buttonContainer;
     [SerializeField] private GameObject buttonPrefab;
     [SerializeField] private int totalLevels = 10;
+    [SerializeField] private Sprite[] artifactSprites;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -33,8 +34,13 @@ public class LevelSelectUI : MonoBehaviour
                 Image iconImage = artifactIcon.GetComponent<Image>();
 
                 bool collected = PlayerPrefs.GetInt("Level_" + levelIndex, 0) == 1;
-
-                iconImage.color = collected ? Color.white : Color.gray;
+                if(levelIndex -1 < artifactSprites.Length)
+                {
+                    iconImage.sprite = artifactSprites[levelIndex-1];
+                }
+                //iconImage.color = collected ? Color.white : Color.gray;
+                iconImage.color = collected ? Color.white : new Color(1, 1, 1, 0.3f);
+                iconImage.transform.localScale = collected ? Vector3.one : Vector3.one * 0.8f;
             }
 
             button.onClick.AddListener(() =>

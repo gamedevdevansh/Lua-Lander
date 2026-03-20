@@ -143,6 +143,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RareItem
   itemName: AlienEnergyCore
+  collectEffect: {fileID: 1179176454016496034, guid: 66c3abe1191fe284f8613eb9db2c1e09, type: 3}
+  collectSound: {fileID: 8300000, guid: 4c9f9d63f11fa4d4ca1c537cd058256d, type: 3}
 --- !u!111 &4634246289807319245
 Animation:
   m_ObjectHideFlags: 0
