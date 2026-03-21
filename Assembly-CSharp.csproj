@@ -62,6 +62,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\UI\StatsUI.cs" />
+    <Compile Include="Assets\Scripts\UI\EndingUI.cs" />
     <Compile Include="Assets\Scripts\Managers\LevelManager.cs" />
     <Compile Include="Assets\Scripts\UI\PausedUI.cs" />
     <Compile Include="Assets\Scripts\Lander\LanderVisuals.cs" />
@@ -77,6 +78,7 @@
     <Compile Include="Assets\Scripts\Managers\ScoreManager.cs" />
     <Compile Include="Assets\Scripts\GamePlay\GameLevel.cs" />
     <Compile Include="Assets\Scripts\Camera\CinemachineCameraZoom2D.cs" />
+    <Compile Include="Assets\Scripts\UI\StartSceneUI.cs" />
     <Compile Include="Assets\Scripts\UI\PauseUI.cs" />
     <Compile Include="Assets\Scripts\UI\GameOverUI.cs" />
     <Compile Include="Assets\Scripts\UI\MainMenuUI.cs" />

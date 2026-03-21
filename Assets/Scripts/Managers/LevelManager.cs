@@ -1,5 +1,6 @@
-using UnityEngine;
 using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
@@ -65,7 +66,8 @@ public class LevelManager : MonoBehaviour
         }
         else
         {
-            SceneLoader.LoadScene(SceneLoader.Scene.GameOverScene);
+            SceneManager.LoadScene("EndingScene");
+            //SceneLoader.LoadScene(SceneLoader.Scene.GameOverScene);
         }
     }
 
