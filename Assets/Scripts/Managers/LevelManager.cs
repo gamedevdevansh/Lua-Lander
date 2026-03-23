@@ -66,7 +66,7 @@ public class LevelManager : MonoBehaviour
         }
         else
         {
-            SceneManager.LoadScene("EndingScene");
+            SceneManager.LoadScene("EndScene");
             //SceneLoader.LoadScene(SceneLoader.Scene.GameOverScene);
         }
     }

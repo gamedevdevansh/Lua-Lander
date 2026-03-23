@@ -227,14 +227,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_Color: {r: 0, g: 1, b: 0, a: 1}
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
+  m_Maskable: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 649223268058989734, guid: fbb9f039e73848f4880f29f3f816d8b5, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -243,7 +243,7 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
+  m_PixelsPerUnitMultiplier: 2
 --- !u!222 &408545831
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -309,10 +309,19 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u201CMission Log 01:\nDeep space sectors have gone silent.\nCritical
-    fragments from Station ECHO are drifting across unknown zones.\n\nYou are the
-    last pilot assigned to recover them.\n\nDo not question the mission. Just complete
-    it.\u201D"
+  m_text: 'Mission Log 01:
+
+    Multiple fragments from Station ECHO are scattered
+    across space sectors.
+
+
+    Your objective is simple:
+
+    Collect all fragments
+    and reach the exit point in each zone.
+
+
+    Stay alert. Some paths are unstable.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 30fd7f1dc1df39b4ba461abbf37b996a, type: 2}
   m_sharedMaterial: {fileID: -6917498455059095038, guid: 30fd7f1dc1df39b4ba461abbf37b996a, type: 2}
@@ -321,8 +330,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4281519410
+  m_fontColor: {r: 0.1960784, g: 0.8039216, b: 0.1960784, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -339,13 +348,13 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 55
-  m_fontSizeBase: 55
+  m_fontSize: 65
+  m_fontSizeBase: 65
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 32
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -595,8 +604,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281479730
-  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+    rgba: 4278255608
+  m_fontColor: {r: 0.97404873, g: 1, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -899,7 +908,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 1, a: 0.043137256}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.043137256}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -953,6 +962,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91397b3566b3d8849afe3215ec54f541, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NewMonoBehaviourScript
+  textUI: {fileID: 538848446}
+  typingSpeed: 0.05
+  fullText: 'Mission Log 01:
+
+    Multiple fragments from Station ECHO are scattered
+    across space sectors.
+
+
+    Your objective is simple:
+
+    Collect all fragments
+    and reach the exit point in each zone.
+
+
+    Stay alert. Some paths are unstable.'
 --- !u!4 &1886811357
 Transform:
   m_ObjectHideFlags: 0

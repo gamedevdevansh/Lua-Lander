@@ -15,7 +15,7 @@ public class MainMenuUI : MonoBehaviour {
         playButton.onClick.AddListener(() => {
             //GameManager.ResetStaticData();
             //ScoreManager.Instance.ResetScore();
-            SceneLoader.LoadScene(SceneLoader.Scene.LevelScene);
+            SceneLoader.LoadScene(SceneLoader.Scene.StartScene);
         });
 
         quitButton.onClick.AddListener(() => {
