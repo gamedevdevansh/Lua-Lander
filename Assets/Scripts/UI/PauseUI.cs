@@ -29,7 +29,9 @@ public class PauseUI : MonoBehaviour
             GameManager.Instance.UnPauseGame();
         });
         mainMenuButton.onClick.AddListener(() => {
-            SceneLoader.LoadScene(SceneLoader.Scene.MainMenuScene);
+            //SceneLoader.LoadScene(SceneLoader.Scene.MainMenuScene);
+            SceneLoader.Instance.Load(SceneLoader.Scene.MainMenuScene);
+
         });
     }
 

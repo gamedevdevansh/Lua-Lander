@@ -143,6 +143,7 @@ public class SceneFader : MonoBehaviour
         }
 
         SceneManager.LoadScene(sceneName);
+        //SceneLoader.Instance.Load(SceneLoader.Scene.LevelScene);
     }
 
     void SetAlpha(float a)

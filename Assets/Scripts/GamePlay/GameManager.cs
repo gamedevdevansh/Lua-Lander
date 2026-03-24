@@ -118,7 +118,8 @@ public class GameManager : MonoBehaviour
     public void RetryLevel()
     {
         //SceneManager.LoadScene(0);
-        SceneLoader.LoadScene(SceneLoader.Scene.GameScene);
+        //SceneLoader.LoadScene(SceneLoader.Scene.GameScene);
+        SceneLoader.Instance.Load(SceneLoader.Scene.GameScene);
     }
 
     public void PauseUnpauseGame()

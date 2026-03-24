@@ -118,7 +118,9 @@ public class StartSceneUI : MonoBehaviour
 
     public void StartGame()
     {
-        SceneManager.LoadScene("LevelScene");
+        //SceneManager.LoadScene("LevelScene");
+        //EndScene
+        SceneLoader.Instance.Load(SceneLoader.Scene.LevelScene);
         //fader.FadeToScene("LevelScene");
         //"StartScene"
     }

@@ -46,13 +46,15 @@ public class LevelSelectUI : MonoBehaviour
             button.onClick.AddListener(() =>
             {
                 PlayerPrefs.SetInt("SelectedLevel", levelIndex);
-                SceneLoader.LoadScene(SceneLoader.Scene.GameScene);
+                //SceneLoader.LoadScene(SceneLoader.Scene.GameScene);
+                SceneLoader.Instance.Load(SceneLoader.Scene.GameScene);
             });
         }
     }
 
     public void OnBackButtonPressed()
     {
-        SceneLoader.LoadScene(SceneLoader.Scene.MainMenuScene);
+        //SceneLoader.LoadScene(SceneLoader.Scene.MainMenuScene);
+        SceneLoader.Instance.Load(SceneLoader.Scene.MainMenuScene);
     }
 }

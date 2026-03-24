@@ -38,7 +38,8 @@ public class EndingUI : MonoBehaviour
     public void RestartGame()
     {
         //fader.FadeToScene("StartScene");
-        SceneManager.LoadScene("StartScene");
+        //SceneManager.LoadScene("StartScene");
+        SceneLoader.Instance.Load(SceneLoader.Scene.StartScene);
         // or "Level1" if you want direct restart
     }
 }
