@@ -26,21 +26,47 @@ public class LevelSelectUI : MonoBehaviour
                 button.interactable = false;
             }
 
-            // ⭐ NEW PART (artifact check)
+            //// ⭐ NEW PART (artifact check)
+            //Transform artifactIcon = buttonObj.transform.Find("ArtifactIcon");
+
+            //if (artifactIcon != null)
+            //{
+            //    Image iconImage = artifactIcon.GetComponent<Image>();
+
+            //    bool collected = PlayerPrefs.GetInt("Level_" + levelIndex, 0) == 1;
+            //    if(levelIndex -1 < artifactSprites.Length)
+            //    {
+            //        iconImage.sprite = artifactSprites[levelIndex-1];
+            //    }
+            //    //iconImage.color = collected ? Color.white : Color.gray;
+            //    iconImage.color = collected ? Color.white : new Color(1, 1, 1, 0.3f);
+            //    iconImage.transform.localScale = collected ? Vector3.one : Vector3.one * 0.8f;
+            //}
+
             Transform artifactIcon = buttonObj.transform.Find("ArtifactIcon");
+            Transform checkIcon = buttonObj.transform.Find("CheckIcon");
+
+            bool collected = PlayerPrefs.GetInt("Level_" + levelIndex, 0) == 1;
 
             if (artifactIcon != null)
             {
                 Image iconImage = artifactIcon.GetComponent<Image>();
 
-                bool collected = PlayerPrefs.GetInt("Level_" + levelIndex, 0) == 1;
-                if(levelIndex -1 < artifactSprites.Length)
+                // Set sprite
+                if (levelIndex - 1 < artifactSprites.Length)
                 {
-                    iconImage.sprite = artifactSprites[levelIndex-1];
+                    iconImage.sprite = artifactSprites[levelIndex - 1];
                 }
-                //iconImage.color = collected ? Color.white : Color.gray;
-                iconImage.color = collected ? Color.white : new Color(1, 1, 1, 0.3f);
+
+                // Always visible (but slightly faded if not collected)
+                iconImage.color = collected ? Color.white : new Color(1, 1, 1, 0.5f);
                 iconImage.transform.localScale = collected ? Vector3.one : Vector3.one * 0.8f;
+            }
+
+            if (checkIcon != null)
+            {
+                // ✅ Show check ONLY if collected
+                checkIcon.gameObject.SetActive(collected);
             }
 
             button.onClick.AddListener(() =>

@@ -230,7 +230,7 @@ public class Lander: MonoBehaviour
     }
     private void ConsumeFuel()
     {
-        float fuelConsumptionAmount = 1f;
+        float fuelConsumptionAmount = 0.4f;
         fuelAmount -= fuelConsumptionAmount * Time.deltaTime;
         //fuelAmount = Mathf.Max(fuelAmount, 0f);
     }
