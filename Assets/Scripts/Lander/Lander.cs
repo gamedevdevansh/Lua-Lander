@@ -77,6 +77,8 @@ public class Lander: MonoBehaviour
                 break;
             case State.Normal:
 
+                bool hasFuel = fuelAmount > 0f;
+
                 if (GameInput.Instance.IsUpActionPressed() ||
                    GameInput.Instance.IsLeftActionPressed() ||
                    GameInput.Instance.IsRightActionPressed() ||
@@ -88,19 +90,19 @@ public class Lander: MonoBehaviour
 
                 float gamepadDeadZone = .4f;
                 // this is for input system
-                if (GameInput.Instance.IsUpActionPressed() || GameInput.Instance.GetMovementVector2().y > gamepadDeadZone)
+                if (hasFuel && (GameInput.Instance.IsUpActionPressed() || GameInput.Instance.GetMovementVector2().y > gamepadDeadZone))
                 {
                     float force = 700f;
                     landerRigidbody2D.AddForce(force * transform.up * Time.deltaTime);
                     OnUpForce?.Invoke(this, EventArgs.Empty);
                 }
-                if (GameInput.Instance.IsLeftActionPressed() || GameInput.Instance.GetMovementVector2().x < -gamepadDeadZone)
+                if (hasFuel && (GameInput.Instance.IsLeftActionPressed() || GameInput.Instance.GetMovementVector2().x < -gamepadDeadZone))
                 {
                     float turnSpeed = +100f;
                     landerRigidbody2D.AddTorque(turnSpeed * Time.deltaTime);
                     OnLeftForce?.Invoke(this, EventArgs.Empty);
                 }
-                if (GameInput.Instance.IsRightActionPressed() || GameInput.Instance.GetMovementVector2().x > gamepadDeadZone)
+                if (hasFuel && (GameInput.Instance.IsRightActionPressed() || GameInput.Instance.GetMovementVector2().x > gamepadDeadZone))
                 {
                     float turnSpeed = -100f;
                     landerRigidbody2D.AddTorque(turnSpeed * Time.deltaTime);
@@ -230,6 +232,7 @@ public class Lander: MonoBehaviour
     {
         float fuelConsumptionAmount = 1f;
         fuelAmount -= fuelConsumptionAmount * Time.deltaTime;
+        //fuelAmount = Mathf.Max(fuelAmount, 0f);
     }
 
     public float GetFuel()
