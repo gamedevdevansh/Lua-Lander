@@ -7,8 +7,27 @@ A 2D Finite Physics-based landing game built in Unity, where: -
 
 3. Progressive Difficulty increases as the level rises. 
 
-4. 1x and 5x score multiplier Landing Pads. 
+4. 1x, 5x and 10x score multiplier Landing Pads. 
 
+5. Precision-Based Landing System (angle and speed matter).
+
+6. Responsive Thrust Controls for accurate movement.
+
+7. Fuel Management System for strategic gameplay.
+
+8. Crash Detection based on impact force and rotation.
+
+9. Multiple Levels with unique landing challenges.
+
+10. Smooth Camera Follow System for better visibility.
+
+11. Minimal and Clean UI for score and gameplay stats.
+
+12. Replayability with high-score improvement focus.
+
+13. Optimized Unity 2D Physics (Rigidbody2D).
+
+14. Modular Code Structure for scalability.
 
 ## MainMenuScene
 ![Main Menu Screenshot](Screenshots/Main_Menu.png)
