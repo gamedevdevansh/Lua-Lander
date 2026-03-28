@@ -62,14 +62,11 @@ public class LevelManager : MonoBehaviour
             currentLevelNumber = nextLevel;
             PlayerPrefs.SetInt(LEVEL_KEY, nextLevel);
             PlayerPrefs.Save();
-            //SceneLoader.LoadScene(SceneLoader.Scene.LevelScene);
             SceneLoader.Instance.Load(SceneLoader.Scene.LevelScene);
         }
         else
         {
-            //SceneManager.LoadScene("EndScene");
             SceneLoader.Instance.Load(SceneLoader.Scene.EndScene);
-            //SceneLoader.LoadScene(SceneLoader.Scene.GameOverScene);
         }
     }
 

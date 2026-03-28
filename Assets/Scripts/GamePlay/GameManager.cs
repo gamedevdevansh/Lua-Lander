@@ -1,5 +1,4 @@
-﻿//using UnityEditor.ShaderGraph.Internal;
-using UnityEngine;
+﻿using UnityEngine;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using Unity.Cinemachine;
@@ -38,7 +37,6 @@ public class GameManager : MonoBehaviour
         Lander.Instance.OnStateChanged += Lander_OnStateChanged;
 
         GameInput.Instance.OnMenuButtonPressed += GameInput_OnMenuButtonPressed;
-        //LoadCurrentLevel();
     }
 
     private void GameInput_OnMenuButtonPressed(object sender, System.EventArgs e)
@@ -117,8 +115,6 @@ public class GameManager : MonoBehaviour
 
     public void RetryLevel()
     {
-        //SceneManager.LoadScene(0);
-        //SceneLoader.LoadScene(SceneLoader.Scene.GameScene);
         SceneLoader.Instance.Load(SceneLoader.Scene.GameScene);
     }
 
