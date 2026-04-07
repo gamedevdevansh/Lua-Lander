@@ -61,58 +61,30 @@ public class GameManager : MonoBehaviour
 
     public IEnumerator PlayIntroSequence(GameLevel level)
     {
-        //// 1️⃣ Focus Rare Item
-        //cinemachineCamera.Target.TrackingTarget = level.GetRareItemTransform();
-
-        //yield return new WaitForSeconds(1.5f);
-
-        //// 2️⃣ Zoom Out using YOUR variable
-        //Camera.main.orthographicSize = level.GetZoomOutOrthographSize();
-
-        //yield return new WaitForSeconds(1.5f);
-
-        //// 3️⃣ Move to Start Position
-        //cinemachineCamera.Target.TrackingTarget = level.GetCameraStartTargetTransform();
-
-        //yield return new WaitForSeconds(1f);
-
-        // Done → now waiting for tap → your existing logic takes over
-
         // Rare item
         cinemachineCamera.Target.TrackingTarget = level.GetRareItemTransform();
 
         yield return new WaitForSeconds(2f);
 
         // Zoom
-        Camera.main.orthographicSize = level.GetZoomOutOrthographSize();
+        //Camera.main.orthographicSize = level.GetZoomOutOrthographSize();
+        // ✅ Zoom (FIXED)
+        CinemachineCameraZoom2D.Instance.SetTargetOrthographicSize(
+            level.GetZoomOutOrthographSize()
+        );
 
         yield return new WaitForSeconds(3f);
 
         // Start position (use transform)
         cinemachineCamera.Target.TrackingTarget = level.GetCameraStartTargetTransform();
-
+        yield return new WaitForSeconds(1f);
+        // 4️⃣ Zoom IN (normal gameplay zoom)
+        CinemachineCameraZoom2D.Instance.SetNormalTargetOrthographicSize();
         yield return new WaitForSeconds(1f);
 
         // Gameplay (follow lander)
         cinemachineCamera.Target.TrackingTarget = Lander.Instance.transform;
     }
-
-    //private IEnumerator SmoothMove(Transform target)
-    //{
-    //    float time = 0f;
-    //    Vector3 startPos = Camera.main.transform.position;
-
-    //    while (time < 1f)
-    //    {
-    //        time += Time.deltaTime;
-    //        Camera.main.transform.position = Vector3.Lerp(
-    //            startPos,
-    //            new Vector3(target.position.x, target.position.y, startPos.z),
-    //            time
-    //        );
-    //        yield return null;
-    //    }
-    //}
     void Update()
     {
         float alpha = Mathf.PingPong(Time.time * 2f, 1f);

@@ -39,10 +39,10 @@ public class LevelManager : MonoBehaviour
 
         GameLevel spawnedLevel = Instantiate(level, Vector3.zero, Quaternion.identity);
         Lander.Instance.transform.position = spawnedLevel.GetLanderStartPosition();
+        //CinemachineCameraZoom2D.Instance.SetTargetOrthographicSize(spawnedLevel.GetZoomOutOrthographSize());
 
         // 👉 PLAY INTRO
         StartCoroutine(GameManager.Instance.PlayIntroSequence(spawnedLevel));
-        //CinemachineCameraZoom2D.Instance.SetTargetOrthographicSize(spawnedLevel.GetZoomOutOrthographSize());
     }
 
     //private void LoadCurrentLevel()

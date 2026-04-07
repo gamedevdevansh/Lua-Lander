@@ -580,7 +580,7 @@ Transform:
   m_GameObject: {fileID: 2292905843542373727}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -19.55, y: 21.22, z: 0}
+  m_LocalPosition: {x: -15.82, y: 21.22, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -927,7 +927,7 @@ MonoBehaviour:
   levelNumber: 2
   landerStartPositionTransform: {fileID: 8613937956815667738}
   CameraStartTargetTransform: {fileID: 1066977766579672448}
-  zoomedOutOrthographicSize: 25
+  zoomedOutOrthographicSize: 35
   rareItemTransform: {fileID: 6781318825440775514}
 --- !u!1001 &512434818195316311
 PrefabInstance:

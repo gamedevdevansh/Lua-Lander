@@ -147,7 +147,7 @@ MonoBehaviour:
   collectEffect: {fileID: 1179176454016496034, guid: 66c3abe1191fe284f8613eb9db2c1e09, type: 3}
   collectSound: {fileID: 8300000, guid: 4c9f9d63f11fa4d4ca1c537cd058256d, type: 3}
   circleSprite: {fileID: 6409072888339361938}
-  blinkSpeed: 2
+  blinkSpeed: 1
 --- !u!111 &4634246289807319245
 Animation:
   m_ObjectHideFlags: 0
@@ -191,7 +191,7 @@ Transform:
   m_GameObject: {fileID: 1900800025186498526}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.03, y: 0, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []

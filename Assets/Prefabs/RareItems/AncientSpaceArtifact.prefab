@@ -238,7 +238,7 @@ MonoBehaviour:
   collectEffect: {fileID: 1179176454016496034, guid: 66c3abe1191fe284f8613eb9db2c1e09, type: 3}
   collectSound: {fileID: 8300000, guid: 4c9f9d63f11fa4d4ca1c537cd058256d, type: 3}
   circleSprite: {fileID: 2420479516867329769}
-  blinkSpeed: 2
+  blinkSpeed: 1
 --- !u!111 &-2195964382058922222
 Animation:
   m_ObjectHideFlags: 0
