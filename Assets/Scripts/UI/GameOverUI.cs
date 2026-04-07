@@ -12,7 +12,6 @@ public class GameOverUI : MonoBehaviour {
 
     private void Awake() {
         mainMenuButton.onClick.AddListener(() => {
-            //SceneLoader.LoadScene(SceneLoader.Scene.MainMenuScene);
             SceneLoader.Instance.Load(SceneLoader.Scene.MainMenuScene);
         });
     }

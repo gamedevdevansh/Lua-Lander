@@ -6329,6 +6329,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: RareItemEffect
       objectReference: {fileID: 0}
+    - target: {fileID: 1179176454016496034, guid: 66c3abe1191fe284f8613eb9db2c1e09, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5937361923355564522, guid: 66c3abe1191fe284f8613eb9db2c1e09, type: 3}
       propertyPath: m_LocalPosition.x
       value: 209.0745

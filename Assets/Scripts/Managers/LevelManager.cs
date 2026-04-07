@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -38,10 +38,34 @@ public class LevelManager : MonoBehaviour
         }
 
         GameLevel spawnedLevel = Instantiate(level, Vector3.zero, Quaternion.identity);
-
         Lander.Instance.transform.position = spawnedLevel.GetLanderStartPosition();
-        CinemachineCameraZoom2D.Instance.SetTargetOrthographicSize(spawnedLevel.GetZoomOutOrthographSize());
+
+        // 👉 PLAY INTRO
+        StartCoroutine(GameManager.Instance.PlayIntroSequence(spawnedLevel));
+        //CinemachineCameraZoom2D.Instance.SetTargetOrthographicSize(spawnedLevel.GetZoomOutOrthographSize());
     }
+
+    //private void LoadCurrentLevel()
+    //{
+    //    GameLevel level = GetLevelByNumber(currentLevelNumber);
+
+    //    if (level == null)
+    //    {
+    //        Debug.LogError("Level not found");
+    //        return;
+    //    }
+
+    //    GameLevel spawnedLevel = Instantiate(level, Vector3.zero, Quaternion.identity);
+
+    //    // Set lander position
+    //    Lander.Instance.transform.position = spawnedLevel.GetLanderStartPosition();
+
+    //    // 👉 START INTRO SEQUENCE
+    //    StartCoroutine(GameManager.Instance.PlayIntroSequence(
+    //        spawnedLevel.GetRareItemTransform(),
+    //        spawnedLevel.GetCameraStartTargetTransform()
+    //    ));
+    //}
 
     public GameLevel GetLevelByNumber(int number)
     {

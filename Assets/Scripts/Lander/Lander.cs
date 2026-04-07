@@ -175,7 +175,6 @@ public class Lander: MonoBehaviour
             SetState(State.GameOver);
             return;
         }
-        //Debug.Log(dotVector);
         Debug.Log("Successful Landing.");
 
         float maxScoreAmountLandingAngle = 100;
@@ -184,10 +183,6 @@ public class Lander: MonoBehaviour
 
         float maxScoreAmountLandingSpeed = 100;
         float landingSpeedScore = (softLandingVelocityMagnitude - relativeVelocityMagnitude) * maxScoreAmountLandingSpeed;
-
-        //Debug.Log("landingAngleScore = " + landingAngleScore);
-        //Debug.Log("landingSpeedScore = " + landingSpeedScore);
-        //Debug.Log();
 
         int score = Mathf.RoundToInt((landingAngleScore + landingSpeedScore) * landingPad.GetScoreMultiplier());
         Debug.Log("Score:" + score);
