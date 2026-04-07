@@ -77,7 +77,7 @@ public class GameManager : MonoBehaviour
 
         // Start position (use transform)
         cinemachineCamera.Target.TrackingTarget = level.GetCameraStartTargetTransform();
-        yield return new WaitForSeconds(1f);
+        //yield return new WaitForSeconds(1f);
         // 4️⃣ Zoom IN (normal gameplay zoom)
         CinemachineCameraZoom2D.Instance.SetNormalTargetOrthographicSize();
         yield return new WaitForSeconds(1f);

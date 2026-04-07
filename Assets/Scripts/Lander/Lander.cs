@@ -10,6 +10,7 @@ public class Lander: MonoBehaviour
 
     private const float GRAVITY_NORMAL = .7F;
 
+
     public event EventHandler OnLeftForce;
     public event EventHandler OnUpForce;
     public event EventHandler OnRightForce;
@@ -55,7 +56,9 @@ public class Lander: MonoBehaviour
         state = State.WaitingToStart;
 
         landerRigidbody2D = GetComponent<Rigidbody2D>();
-        landerRigidbody2D.gravityScale = 0f; 
+        landerRigidbody2D.gravityScale = 0f;
+        landerRigidbody2D.linearDamping = 1.5f;   // smooth movement
+        landerRigidbody2D.angularDamping = 2f;    // stable rotation
     }
 
     // Update is called once per frame
@@ -93,18 +96,21 @@ public class Lander: MonoBehaviour
                 if (hasFuel && (GameInput.Instance.IsUpActionPressed() || GameInput.Instance.GetMovementVector2().y > gamepadDeadZone))
                 {
                     float force = 700f;
-                    landerRigidbody2D.AddForce(force * transform.up * Time.deltaTime);
+                    //landerRigidbody2D.AddForce(force * transform.up * Time.deltaTime);
+                    landerRigidbody2D.AddForce(force * transform.up);
                     OnUpForce?.Invoke(this, EventArgs.Empty);
                 }
                 if (hasFuel && (GameInput.Instance.IsLeftActionPressed() || GameInput.Instance.GetMovementVector2().x < -gamepadDeadZone))
                 {
-                    float turnSpeed = +100f;
+                    float turnSpeed = 250f;
+                    //float turnSpeed = 100f;
                     landerRigidbody2D.AddTorque(turnSpeed * Time.deltaTime);
                     OnLeftForce?.Invoke(this, EventArgs.Empty);
                 }
                 if (hasFuel && (GameInput.Instance.IsRightActionPressed() || GameInput.Instance.GetMovementVector2().x > gamepadDeadZone))
                 {
-                    float turnSpeed = -100f;
+                    float turnSpeed = -250f;
+                    //float turnSpeed = -100f;
                     landerRigidbody2D.AddTorque(turnSpeed * Time.deltaTime);
                     OnRightForce?.Invoke(this, EventArgs.Empty);
                 }
